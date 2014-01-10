@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * This file is part of Mbiz_Slider for Magento.
+ *
+ * @license All rights reserved
+ * @author Jacques Bodin-Hullin <@jacquesbh> <j.bodinhullin@monsieurbiz.com>
+ * @category Mbiz
+ * @package Mbiz_Slider
+ * @copyright Copyright (c) 2013 Monsieur Biz (http://monsieurbiz.com/)
+ */
+-->
+<config>
+    <modules>
+        <Mbiz_Slider>
+            <version>0.1.0</version>
+            <depends>
+                <AntoineK_MediaChooserField />
+            </depends>
+        </Mbiz_Slider>
+    </modules>
+    <global>
+        <models>
+            <mbiz_slider>
+                <class>Mbiz_Slider_Model</class>
+                <resourceModel>mbiz_slider_mysql4</resourceModel>
+            </mbiz_slider>
+            <mbiz_slider_mysql4>
+                <class>Mbiz_Slider_Model_Mysql4</class>
+                <entities>
+                    <slide>
+                        <table>mbiz_slider_slide</table>
+                    </slide>
+                </entities>
+            </mbiz_slider_mysql4>
+        </models>
+        <blocks>
+            <mbiz_slider>
+                <class>Mbiz_Slider_Block</class>
+            </mbiz_slider>
+        </blocks>
+        <helpers>
+            <mbiz_slider>
+                <class>Mbiz_Slider_Helper</class>
+            </mbiz_slider>
+        </helpers>
+        <resources>
+            <mbiz_slider_setup>
+                <setup>
+                    <module>Mbiz_Slider</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </mbiz_slider_setup>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mbiz_slider after="Mage_Adminhtml">Mbiz_Slider_Adminhtml</mbiz_slider>
+                    </modules>
+                    <modules>
+                        <mbiz_slider after="Mage_Adminhtml">Mbiz_Slider_Adminhtml</mbiz_slider>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Mbiz_Slider>
+                    <files>
+                        <default>Mbiz_Slider.csv</default>
+                    </files>
+                </Mbiz_Slider>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <translate>
+            <modules>
+                <Mbiz_Slider>
+                    <files>
+                        <default>Mbiz_Slider.csv</default>
+                    </files>
+                </Mbiz_Slider>
+            </modules>
+        </translate>
+    </frontend>
+</config>

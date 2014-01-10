@@ -1,0 +1,26 @@
+<?php
+/**
+ * This file is part of Mbiz_Slider for Magento.
+ *
+ * @license All rights reserved
+ * @author Jacques Bodin-Hullin <@jacquesbh> <j.bodinhullin@monsieurbiz.com>
+ * @category Mbiz
+ * @package Mbiz_Slider
+ * @copyright Copyright (c) 2013 Monsieur Biz (http://monsieurbiz.com/)
+ */
+/* @var $this Mbiz_Slider_Block_Slider */
+
+$_slides   = $this->getSlides();
+?>
+<ul>
+<?php foreach ($_slides as $_slide): ?>
+    <li>
+        <!-- Slide URL: <?php echo $_slide->getUrl(); ?> -->
+        <img src="<?php echo $_slide->getImageUrl(); ?>" alt="<?php echo $this->escapeHtml($_slide->getImageAlt()); ?>" />
+        <strong><?php echo $this->escapeHtml($_slide->getTitle()); ?></strong>
+        <?php if ($_slide->hasSubtitle()): ?>
+        <p><?php echo $this->escapeHtml($_slide->getSubtitle()); ?></p>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>
+</ul>

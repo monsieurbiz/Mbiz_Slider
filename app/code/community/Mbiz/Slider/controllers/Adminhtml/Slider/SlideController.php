@@ -84,6 +84,7 @@ class Mbiz_Slider_Adminhtml_Slider_SlideController extends Mage_Adminhtml_Contro
         // if handles were specified in arguments load them first
         $this->getLayout()->getUpdate()->addHandle('default');
         $this->getLayout()->getUpdate()->addHandle('editor');
+        $this->getLayout()->getUpdate()->addHandle('adminhtml_browser_js_overload');
 
         // add default layout handles for this action
         $this->addActionLayoutHandles();
